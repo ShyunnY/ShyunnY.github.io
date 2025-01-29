@@ -25,6 +25,4 @@ showToc: true
 * Golang
 * Rust
 
-**希望我们永远保持期待美好的事情即将发生的信念!**
-
-*Life is coding, and coding builds life.*
+***希望我们永远保持期待美好事情即将发生的信念!  Life is coding, and coding builds life.***

@@ -32,10 +32,10 @@ params:
   homeInfoParams:
     Title: "欢迎来到我的个人博客 :bulb:"
     Content: |
-      ***:low_brightness: 天空没有极限, 我的未来无边***
+      ***天空没有极限***
   socialIcons:
     - name: github
-      url: https://github.com/ShyunnY   
+      url: https://github.com/ShyunnY 
   assets:
     favicon: "/image/framework/favicon.ico"
     favicon16x16: "/image/framework/favicon-16x16.png"
