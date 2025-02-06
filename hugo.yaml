@@ -1,4 +1,4 @@
-baseURL: https://127.0.0.1:9999/
+baseURL: https://shyunny.blog/
 title: Shyunny Cove
 languageCode: zh
 defaultContentLanguage: zh
@@ -21,8 +21,8 @@ params:
   env: production
   author:
     - shyunny
-  description: shyunny 的小屋
-  defaultTheme: auto
+  description: shyunny 的飞行随笔
+  defaultTheme: dark
   ShowReadingTime: true
   ShowCodeCopyButtons: true
   ShowPageNums: true
@@ -30,9 +30,11 @@ params:
     disableHLJS: true
   ShowToc: true  
   homeInfoParams:
-    Title: "欢迎来到我的个人博客 :bulb:"
+    Title: ":bulb: 想到什么, 就写什么"
     Content: |
-      ***天空没有极限***
+      :computer: 热衷于 CloudNative 和基础架构研究
+      
+      :e-mail: 您可以在 shyunny@outlook.com 联系到我
   socialIcons:
     - name: github
       url: https://github.com/ShyunnY 
@@ -47,7 +49,7 @@ markup:
     anchorLineNos: true
     codeFences: true
     guessSyntax: true
-    lineNos: true
+    lineNos: false
     style: monokai
 
 

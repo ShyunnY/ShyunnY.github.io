@@ -17,12 +17,12 @@ showToc: true
 * Kubernetes 开发
 * Observability 开发
 * eBPF 开发
-* Proxy/边缘 Gateway 开发
+* Proxy / Edge Gateway 开发
 
-## 掌握哪些语言
+## 工作语言
 
-* 中文
 * Golang
 * Rust
+* Zig(尝试)
 
-***希望我们永远保持期待美好事情即将发生的信念!  Life is coding, and coding builds life.***
+> **Life is coding, and coding builds life.**
