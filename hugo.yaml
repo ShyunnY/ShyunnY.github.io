@@ -26,8 +26,6 @@ params:
   ShowReadingTime: true
   ShowCodeCopyButtons: true
   ShowPageNums: true
-  assets:
-    disableHLJS: true
   ShowToc: true  
   homeInfoParams:
     Title: ":bulb: 想到什么, 就写什么"
@@ -39,6 +37,7 @@ params:
     - name: github
       url: https://github.com/ShyunnY 
   assets:
+    disableHLJS: true
     favicon: "/image/framework/favicon.ico"
     favicon16x16: "/image/framework/favicon-16x16.png"
     favicon32x32: "/image/framework/favicon-32x32.png"
@@ -51,6 +50,9 @@ markup:
     guessSyntax: true
     lineNos: false
     style: monokai
+  goldmark:
+    renderer:
+      unsafe: true
 
 
 menu:

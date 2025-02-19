@@ -34,16 +34,16 @@ perf list 命令会列出系统支持的以下类型的事件:
 
 perf 有多个子命令, 我们可以根据 `perf -h` 查看其所有子命令, 以下是常用的子命令介绍:
 
-| 子命令          | 功能描述                                                   | 使用场景                                           |
-|-----------------|------------------------------------------------------------|----------------------------------------------------|
-| `record`   | 记录程序的性能数据（如 CPU 使用率、函数调用栈等）, 生成 `perf.data` 文件。 | 用于事后分析程序的性能瓶颈, 支持生成火焰图（Flame Graph）。 |
-| `report`   | 解析 `perf.data` 文件, 展示性能分析结果（如热点函数、调用栈等）。 | 查看 `perf record` 记录的性能数据, 定位 CPU 热点或函数调用关系。 |
-| `top`      | 实时显示系统中或某个进程的 CPU 使用率最高的函数。              | 实时监控程序的性能瓶颈, 类似 `top` 命令, 但精确到函数级别。 |
-| `stat`     | 统计程序的整体性能指标（如 CPU 周期、缓存命中率、分支预测错误等）。 | 快速评估程序的整体性能, 适合初步性能分析。             |
-| `trace`    | 追踪程序的系统调用和信号事件。                               | 分析程序的系统调用行为, 定位 I/O 或内核相关问题。      |
-| `annotate` | 将性能数据映射到源代码或汇编代码, 显示热点代码行。           | 深入分析热点函数的代码行, 定位具体的性能瓶颈。        |
-| `list`     | 列出当前系统支持的硬件和软件性能事件。                       | 查看可监控的性能事件（如 CPU 周期、缓存失效等）。      |
-| `probe`    | 动态插入探针（kprobe 或 uprobe）, 用于跟踪内核或用户空间函数。 | 动态监控特定函数或代码行的执行情况。                 |
+| 子命令     | 功能描述                                                                   | 使用场景                                                         |
+| ---------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `record`   | 记录程序的性能数据（如 CPU 使用率、函数调用栈等）, 生成 `perf.data` 文件。 | 用于事后分析程序的性能瓶颈, 支持生成火焰图（Flame Graph）。      |
+| `report`   | 解析 `perf.data` 文件, 展示性能分析结果（如热点函数、调用栈等）。          | 查看 `perf record` 记录的性能数据, 定位 CPU 热点或函数调用关系。 |
+| `top`      | 实时显示系统中或某个进程的 CPU 使用率最高的函数。                          | 实时监控程序的性能瓶颈, 类似 `top` 命令, 但精确到函数级别。      |
+| `stat`     | 统计程序的整体性能指标（如 CPU 周期、缓存命中率、分支预测错误等）。        | 快速评估程序的整体性能, 适合初步性能分析。                       |
+| `trace`    | 追踪程序的系统调用和信号事件。                                             | 分析程序的系统调用行为, 定位 I/O 或内核相关问题。                |
+| `annotate` | 将性能数据映射到源代码或汇编代码, 显示热点代码行。                         | 深入分析热点函数的代码行, 定位具体的性能瓶颈。                   |
+| `list`     | 列出当前系统支持的硬件和软件性能事件。                                     | 查看可监控的性能事件（如 CPU 周期、缓存失效等）。                |
+| `probe`    | 动态插入探针（kprobe 或 uprobe）, 用于跟踪内核或用户空间函数。             | 动态监控特定函数或代码行的执行情况。                             |
 
 
 ## 实验前准备
@@ -171,10 +171,10 @@ $ perf list tracepoint --details | grep -e "syscalls:sys_enter_io_.*"
 perf trace 是 perf 工具的一部分, 用于实时跟踪和显示进程的系统调用、信号事件、以及其他与内核交互的事件。它提供了类似于 `strace` 的功能, 但在性能分析的上下文中, 它**具有更低的开销**, 并能与 perf 工具的其他功能集成使用。
 
 perf trace 的作用:
-* 跟踪系统调用: perf trace 可以跟踪进程发出的系统调用（如 `read()`, `write()`, `open()` 等）, 帮助分析进程与操作系统之间的交互。
-* 跟踪信号事件: 可以跟踪信号的发送与接收, 帮助诊断进程的信号处理和信号处理程序的行为。
-* 性能分析: 通过结合其他 perf 命令, perf trace 可帮助定位性能瓶颈, 分析系统调用的开销、延迟和频率等。
-* 实时监控: perf trace 提供实时的系统调用跟踪, 允许开发人员在程序执行过程中对其行为进行实时分析。
+* **跟踪系统调用:** perf trace 可以跟踪进程发出的系统调用（如 `read()`, `write()`, `open()` 等）, 帮助分析进程与操作系统之间的交互。
+* **跟踪信号事件:** 可以跟踪信号的发送与接收, 帮助诊断进程的信号处理和信号处理程序的行为。
+* **性能分析:** 通过结合其他 perf 命令, perf trace 可帮助定位性能瓶颈, 分析系统调用的开销、延迟和频率等。
+* **实时监控:** perf trace 提供实时的系统调用跟踪, 允许开发人员在程序执行过程中对其行为进行实时分析。
 
 我们可以执行 `perf trace --help` 查看命令描述. 稍微有点多 :)
 
@@ -304,3 +304,141 @@ $ perf trace  -e openat --call-graph fp ./app
 >   * dwarf：基于 DWARF 调试信息 的调用图。需要可用的调试符号信息（比如通过 -g 编译时保留的符号）。可以提供更精确的调用栈。
 >   * lbr：基于 硬件性能计数器（Last Branch Record） 的调用图。利用硬件支持的功能记录函数的调用路径，能够捕获更底层的细节，但支持的硬件较少。
 > * record_size：这个参数只有在选择了 dwarf 作为 record_mode 时才有意义，用于指定记录栈大小的最大字节数。默认值是 8192 字节（即 8KB）
+
+### perf top
+
+perf top 用于实时显示系统中耗费 CPU 时间的函数或代码热点。它是性能分析的一个非常有用的工具，能够快速识别系统中的性能瓶颈。
+
+具有以下特点:
+* **实时查看热点:** 周期性地采样 CPU 的执行状态，并输出当前占用 CPU 时间最多的函数、代码路径或者符号.
+* **内核和用户空间的分析:** perf top 不仅能够分析用户空间程序，还能够分析内核空间的函数（如系统调用），这对于调试内核性能问题尤为重要。
+* **低开销分析:** perf top 的采样方法是基于硬件性能计数器的，具有较低的开销，因此可以在生产环境中长期运行而不影响系统性能。
+* **可视化分析:** perf top 会输出一个类似于 top 命令的动态实时界面，可以按 CPU 使用率、函数名、模块等维度进行排序，便于开发者直观地看到代码性能瓶颈。
+
+我们可以执行 `perf top --help` 查看命令描述, 这个命令的帮助信息也稍微有点多 :)
+
+```shell
+$ perf top --help
+Usage: perf top [<options>]
+    -a, --all-cpus        # 从所有 CPU 进行系统范围的数据收集
+    -b, --branch-any      # 采样所有被执行的分支
+    -c, --count <n>       # 事件采样周期
+    -C, --cpu <cpu>       # 要监控的 CPU 列表
+    -d, --delay <n>       # perf top 界面的刷新频率
+    -D, --dump-symtab     # 转储用于分析的符号表
+    -E, --entries <n>     # 显示此数量的函数
+    -e, --event <event>   # 事件选择器, 可以过滤 `perf list` 列出的 events
+    -f, --count-filter <n> # 仅显示事件次数超过此值的函数
+    -F, --freq <freq or 'max'> # perf top 每秒采样频率配置.(-F 1000 代表每秒采样 1000次, -F max 使用系统能够支持的最大采样频率)
+    -g                    # 启用调用图记录和显示
+    -G, --cgroup <name>   # 仅监控指定 cgroup 名称中的事件
+    -i, --no-inherit      # 子任务不继承计数器
+    -j, --branch-filter <branch filter mask> # 分支堆栈过滤模式
+    -K, --hide_kernel_symbols # 隐藏内核态的程序符号
+    -k, --vmlinux <file>  # vmlinux 文件路径
+    -M, --disassembler-style <disassembler style> # 指定反汇编风格（例如，-M intel 表示 intel 语法）
+    -m, --mmap-pages <pages> mmap 数据页数量
+    -n, --show-nr-samples # 显示样本数量列
+    -p, --pid <pid>       # attach 到指定的 PID 上分析
+    -r, --realtime <n>    # 以该 RT SCHED_FIFO 优先级收集数据
+    -s, --sort <key[,key2...]> # 按键排序: pid, comm, dso, symbol, parent, cpu, srcline......
+    -t, --tid <tid>       # 在指定线程 ID 上分析事件
+    -U, --hide_user_symbols # 隐藏用户态的程序符号
+    -u, --uid <user>      # 分析指定用户的事件
+    -v, --verbose         # 显示更详细的信息（如显示计数器打开错误等）
+    -w, --column-widths <width[,width...]> # 不自动调整列宽，使用这些固定的列宽值
+    -z, --zero            # 在更新时清除历史数据
+    --all-cgroups     # 记录 cgroup 事件
+    --asm-raw         # 显示汇编指令的原始编码（默认）
+    --call-graph <record_mode[,record_size],print_type,threshold[,print_limit],order,sort_key[,branch]>
+        # 设置并启用调用图（堆栈链/回溯）：            
+        record_mode:    调用图记录模式（fp|dwarf|lbr）
+        record_size:    如果记录模式是 'dwarf'，最大堆栈记录大小（<字节>）默认值：8192（字节）
+        print_type:     调用图打印样式（graph|flat|fractal|folded|none）
+        threshold:      调用图包含的最小阈值（<百分比>）
+        print_limit:    最大调用图条目数（<数字>）
+        order:          调用图顺序（caller|callee）
+        sort_key:       调用图排序键（function|address）
+        branch:         将最后的分支信息包含到调用图中（branch）
+        value:          调用图值（percent|period|count）
+        默认值：fp,graph,0.5,caller,function                          
+    --children        # 累积子任务的调用链并显示总的开销
+```
+> 以上是常用的 `<options>`, 感兴趣的可以自行去了解一下~
+
+现在我们准备一个程序用于被 `perf top` 进行性能分析:
+```go
+// go build .
+package main
+
+func main() {
+	go HandlerConnect()
+
+	select {}
+}
+
+//go:noinline
+func HandlerConnect() {
+  for {
+		HandlerQuery()
+	}
+}
+
+//go:noinline
+func HandlerQuery() {}
+```
+> 需要加入 `//go:noinline` 避免编译器将我们的函数内联优化了, 以导致找不到对应的符号
+
+此时我们将其运行起来, 然后尝试使用 perf top 分析该程序
+```shell
+# 以 4000Hz 频率收集进程 17068 的信息, 每 1s 同步到 screen 上, 
+# 隐藏内核的符号, 并展示其调用链
+$ perf top -F 4000 -K -d 1 -g -p 17068
+```
+<center><img src="./perf_top_screen.png"/></center>
+
+此时可以按下 `h` 键, 显示帮助详情
+| **按键**   | **功能描述**                                                                                  |
+|------------|-----------------------------------------------------------------------------------------------|
+| **k**      | 放大并查看内核符号（只显示内核的符号）                                                         |
+| **a**      | 注释当前符号(尝试显示该函数的源代码并标注出热点)                                                         |
+| **C**      | 折叠所有调用链                                                        |
+| **L**      | 更改百分比限制, 换句话说用于过滤执行百分比的项                                                            |
+| **M**      | 切换显示的采样状态，包括每秒采样的次数                                                         |
+| **Enter**  | 选择当前行的详细信息                                                                            |
+| **Space**  | 选择当前行，显示更多详细信息                                                                   |
+| **+**      | 展开当前函数的调用链（显示调用栈）                                                             |
+| **e**      | 展开/折叠当前函数的调用链（显示或隐藏调用栈）                                                 |
+| **c**      | 展开/折叠当前函数的调用链（显示或隐藏调用栈，等同于 `e`）                                      |
+| **...**      | ...                                                |
+
+我们可以针对 Self 列执行热点最高的行按下 Enter 键进入下一级选择:
+```shell
+# 对 main.HandlerConnect 函数进行注释.
+# 选择这个选项后，perf 会尝试显示该函数的源代码并标注出热点（即最消耗 CPU 时间的行）
+# 这种方式通常用于深入了解函数内部的性能瓶颈, 帮助开发者优化代码。需要 `符号信息` 和 `源代码可用` 才能显示注释
+- Annotate main.HandlerConnect                      
+# 放大并查看 perf 动态共享对象（DSO）                                                                                   
+- Zoom into perf DSO (use the 'k' hotkey to zoom directly into the kernel)  
+# 展开 main.HandlerConnect 的调用链                                                              
+- Expand [main.HandlerConnect] callchain (one level, same as '+' hotkey, use 'e'/'c' for the whole main level entry) 
+# 查看程序的内存映射信息, 你可以了解程序在内存中的布局
+- Browse map details                                                                                                                               
+- Exit
+```
+
+那么我们选择第一项(等同于在 perf top screen 页面按下 `a` 键), 对 `smain.HandlerConnect` 函数进行标注查看其热点汇编代码
+可以看到 perf top 提示我们其热点汇编代码, 那么我们可以执行以下命令进一步分析
+```shell
+# 查看其汇编代码上下20行的上下文
+$ go tool objdump -S perf | grep "CALL main.HandlerQuery" -A 20 -B 20
+```
+
+
+<center><img src="./perf_top_annotate.png"/></center>
+
+> 注意: 我们需要确保编译后程序的符号表和调试信息没有被剥离！
+>
+> 可以通过 `$file <binary>` 查看详情:
+> 
+> 如果其输出: `application: ......, not stripped` 代表调试信息未被剥离
