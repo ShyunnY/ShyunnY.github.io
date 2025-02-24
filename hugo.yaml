@@ -26,23 +26,28 @@ params:
   ShowReadingTime: true
   ShowCodeCopyButtons: true
   ShowPageNums: true
-  ShowToc: true  
+  ShowToc: true
   homeInfoParams:
     Title: ":bulb: 想到什么, 就写什么"
     Content: |
       :computer: 热衷于 CloudNative 和基础架构研究
-      
+
       :e-mail: 您可以在 shyunny@outlook.com 联系到我
   socialIcons:
     - name: github
-      url: https://github.com/ShyunnY 
+      url: https://github.com/ShyunnY
   assets:
     disableHLJS: true
     favicon: "/image/framework/favicon.ico"
     favicon16x16: "/image/framework/favicon-16x16.png"
     favicon32x32: "/image/framework/favicon-32x32.png"
     apple_touch_icon: "/image/framework/apple-touch-icon.png"
-
+  frontmatter:
+    lastmod:
+      - lastmod
+      - :git
+      - date
+      - publishDate
 markup:
   highlight:
     anchorLineNos: true
@@ -54,7 +59,6 @@ markup:
     renderer:
       unsafe: true
 
-
 menu:
   main:
     - name: 关于
@@ -62,7 +66,7 @@ menu:
       weight: 10
     - name: 查找
       url: search/
-      weight: 20  
+      weight: 20
     - name: 归档
       url: archives/
       weight: 30

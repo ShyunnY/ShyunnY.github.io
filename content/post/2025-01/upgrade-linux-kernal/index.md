@@ -1,5 +1,6 @@
 ---
-date: '2025-01-29T19:59:14+08:00'
+date: '2025-01-29'
+lastmod: '2025-02-24'
 draft: false
 title: 'Linux 内核升级 (Ubuntu)'
 categories: ['linux']

@@ -1,6 +1,6 @@
 ---
-date: '2025-02-04T16:56:23+08:00'
-lastmod: '2025-02-06T11:36:23+08:00'
+date: '2025-02-04'
+lastmod: '2025-02-19'
 draft: false
 title: 'Linux Perf 指南'
 categories: ['linux']
