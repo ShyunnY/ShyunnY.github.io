@@ -3,13 +3,17 @@
 ### install hugo
 
 ```shell
-brew install hugo
+$ brew install hugo
 ```
 
 ### update submodule
 
 ```shell
-git submodule update --init --recursive
+$ git submodule update --init --recursive
 ```
 
-### 
+### Generate site
+
+```shell
+$ hugo
+```
