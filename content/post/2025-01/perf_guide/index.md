@@ -5,7 +5,7 @@ draft: false
 title: 'Linux Perf 指南'
 categories: ['linux']
 tags: ['运维'] 
-summary: "Linux Perf 工具: 性能分析的「显微镜」与「时光机」"
+summary: "Linux Perf 工具: 性能分析「显微镜」与「时光机」"
 ---
 
 在计算机的世界里, 程序运行的每一纳秒都在上演着无数微观事件: CPU 的指令执行、缓存的命中与失效、内存的分配与回收……这些事件如同宇宙中的暗物质, 虽然看不见摸不着, 却主宰着程序的性能命运。
