@@ -7,16 +7,18 @@ summary: "个人介绍"
 showToc: true
 ---
 
-## 个人介绍
+## 个人履历
 
-* 软件工程在读大四
-* 云厂商 DevOps 研发
+* 七牛云运维研发(2024-06 - 2025-03)
+* 腾讯云交付研发(2025-07 - 至今)
+
 
 ## 研究方向
 
 * Kubernetes 开发
 * Observability 开发
 * eBPF 开发
+* MQ 开发
 * Proxy / Edge Gateway 开发
 
 ## 工作语言
