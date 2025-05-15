@@ -10,7 +10,7 @@ showToc: true
 ## 个人履历
 
 * 七牛云运维研发(2024-06 - 2025-03)
-* 腾讯云交付研发(2025-07 - 至今)
+* 腾讯云交付研发(2025-07 - Future)
 
 
 ## 研究方向
@@ -25,6 +25,5 @@ showToc: true
 
 * Golang
 * Rust
-* Zig(尝试)
 
 > **Life is coding, and coding builds life.**
