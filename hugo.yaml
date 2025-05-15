@@ -16,6 +16,7 @@ buildExpired: true
 
 minify:
   disableXML: true
+  disableJSON: true
 
 params:
   env: production
@@ -81,4 +82,3 @@ outputs:
   home:
     - HTML
     - RSS
-    - JSON
