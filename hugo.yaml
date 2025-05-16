@@ -49,6 +49,9 @@ params:
       - :git
       - date
       - publishDate
+  busuanzi:
+    enable: true
+
 markup:
   highlight:
     anchorLineNos: true
