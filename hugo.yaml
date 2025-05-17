@@ -3,7 +3,7 @@ title: Shyunny Cove
 languageCode: zh
 defaultContentLanguage: zh
 pagination:
-  pagerSize: 5
+  pagerSize: 3
 theme:
   - PaperMod
 
