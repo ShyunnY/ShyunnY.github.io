@@ -66,3 +66,7 @@ Raft协议一共包含如下几类角色：
 | Membership / Cluster Config     | 管理集群节点成员列表，如添加节点、删除节点等。变更过程也要通过日志达成一致 |
 | Metrics / Monitoring            | 提供 Raft 内部状态信息，如当前 Leader 是谁、日志复制延迟、提交索引等，便于监控和调试 |
 | Client Interface                | 接收客户端请求，通常只由 Leader 处理写入请求，并反馈提交结果给客户端 |
+
+## 参考文章
+
+* [深入高可用系统原理与设计-分布式共识与算法](https://www.thebyte.com.cn/consensus/summary.html)
