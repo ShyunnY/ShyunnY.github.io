@@ -8,3 +8,28 @@ body {
 code {
     font-family: 'Fira Code VF', monospace;
 }
+
+.post-content img {
+    margin: auto;
+}
+
+.post-single img,
+.post-content pre {
+    border-radius: 0.3em;
+}
+
+/* 超链接样式 */
+.post-content a:not(.anchor) {
+    box-shadow: none;
+    text-decoration: none;
+    background: linear-gradient(to bottom, transparent 70%, rgba(58, 164, 138, 0.5) 70%);
+}
+
+/* 下划线样式 */
+.post-content u:not(.anchor) {
+    text-decoration: none;
+    background: linear-gradient(to bottom,
+            transparent 70%,
+            rgba(255, 100, 100, 0.4) 70%);
+    padding-bottom: 2px;
+}
