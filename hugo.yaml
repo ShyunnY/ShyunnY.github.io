@@ -23,7 +23,8 @@ params:
   author:
     - shyunny
   description: shyunny 的飞行随笔
-  defaultTheme: dark
+  defaultTheme: light
+  disableThemeToggle: true
   ShowReadingTime: true
   ShowCodeCopyButtons: true
   ShowPageNums: true
@@ -58,7 +59,7 @@ markup:
     codeFences: true
     guessSyntax: true
     lineNos: false
-    style: monokai
+    style: github
   goldmark:
     renderer:
       unsafe: true

@@ -13,7 +13,7 @@ Raft 中的日志是一个 **按顺序排列的指令列表**，每条日志记�
 * term: 这条日志在哪个 term 被写入
 * command: 来自客户端的操作（如 key/value 设置、增删记录等）
 
-```txt
+```go
 // 日志结构体定义
 Entry { index: u64, term: u64, command: Vec<u8> }
 
@@ -50,7 +50,7 @@ Entry { index: u64, term: u64, command: Vec<u8> }
 2.Leader 向 Followers 发送日志条目
 AppendEntries 结构如下:
 
-```txt
+```go
 {
   term: 2,
   leader_id: "A",
